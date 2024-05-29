@@ -12,7 +12,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var mainLabel: UILabel!
     
     
-
+    @IBOutlet var checkButton: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

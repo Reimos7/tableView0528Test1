@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,15 +68,15 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" id="Ct8-cE-7Ex" customClass="TableViewCell" customModule="tableView0528Test1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="148" width="393" height="40.333332061767578"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="66" id="Ct8-cE-7Ex" customClass="TableViewCell" customModule="tableView0528Test1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="148" width="393" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ct8-cE-7Ex" id="4Vg-6a-bhh">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="40.333332061767578"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zso-E3-Rqv">
-                                            <rect key="frame" x="60" y="9.9999999999999982" width="41.333333333333343" height="20.333333333333329"/>
+                                            <rect key="frame" x="60" y="10" width="41.333333333333343" height="46"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="OX9-wd-q04"/>
                                             </constraints>
@@ -85,14 +84,26 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itu-Sq-Bmb">
+                                            <rect key="frame" x="333" y="5" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="1sM-vd-0Sf"/>
+                                                <constraint firstAttribute="width" constant="50" id="iX1-nx-8Ov"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="checkmark.message.fill" catalog="system" title=""/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="zso-E3-Rqv" firstAttribute="top" secondItem="4Vg-6a-bhh" secondAttribute="top" constant="10" id="8Co-Hs-qwB"/>
                                         <constraint firstItem="zso-E3-Rqv" firstAttribute="leading" secondItem="4Vg-6a-bhh" secondAttribute="leading" constant="60" id="Bs3-Ir-1Ld"/>
+                                        <constraint firstAttribute="trailing" secondItem="Itu-Sq-Bmb" secondAttribute="trailing" constant="10" id="Lul-My-tgJ"/>
+                                        <constraint firstItem="Itu-Sq-Bmb" firstAttribute="top" secondItem="4Vg-6a-bhh" secondAttribute="top" constant="5" id="ZqS-oJ-n8P"/>
                                         <constraint firstItem="zso-E3-Rqv" firstAttribute="centerY" secondItem="4Vg-6a-bhh" secondAttribute="centerY" id="oST-0g-on3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="checkButton" destination="Itu-Sq-Bmb" id="PE5-Y9-xLu"/>
                                     <outlet property="mainLabel" destination="zso-E3-Rqv" id="zhC-3s-Wu3"/>
                                 </connections>
                             </tableViewCell>
@@ -114,6 +125,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.message.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -7,9 +7,26 @@
 
 import UIKit
 
+struct Check {
+    let list: String
+    var check: Bool
+}
+
+
 class TableViewController: UITableViewController {
+  
     
-    var list = ["그립톡 구매하기","사이다 구매","아이패드 케이스 최저가 알아보기","양말"]
+//    var list = ["그립톡 구매하기","사이다 구매","아이패드 케이스 최저가 알아보기","양말"]
+    
+    var todolist = [
+        Check(list: "그립톡 구매하기", check: true),
+        Check(list: "사이다 구매", check: false ),
+        Check(list: "아이패드 케이스 최저가", check: true ),
+        Check(list: "양말", check: false)
+    ]
+    
+    // 체크 버튼을 위한 Bool 배열
+    var check = true
     
     @IBOutlet var mainTextField: UITextField!
     
@@ -19,6 +36,7 @@ class TableViewController: UITableViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 120
         
         self.navigationItem.title = "쇼핑"
         
@@ -29,28 +47,39 @@ class TableViewController: UITableViewController {
         
         // 추가 버튼 생성
         addButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
-      
+        
         
         
 }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return list.count
+        return todolist.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         
-        let data = list[indexPath.row]
+        let data = todolist[indexPath.row]
         
-        cell.mainLabel.text = data
+        let name = todolist[indexPath.row].check ? "checkmark.message.fill" : "checkmark.message"
+        let image = UIImage(systemName: name)
+        cell.checkButton.setImage(image, for: .normal)
+        
+        cell.mainLabel.text = data.list
+        // 체크 버튼 생성
+        cell.checkButton.tag = indexPath.row
+        cell.checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
         
         
         return cell
    
+    }
+    @objc func checkButtonClicked(sender: UIButton){
+        self.todolist[sender.tag].check.toggle()
+        tableView.reloadData()
+        
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .automatic)
     }
     
     @objc func addButtonClicked(){
@@ -59,8 +88,8 @@ class TableViewController: UITableViewController {
             return
         }
         // 추가 버튼 클릭시 텍스트 필드에 입력한 내용을 배열에 추가
-        list.append(text)
-        
+        let addText = Check(list: text, check: true)
+        todolist.append(addText)
         // 텍스트필드 비워주기
         mainTextField.text = ""
         
@@ -74,7 +103,8 @@ class TableViewController: UITableViewController {
         
         let randomNumText = Int.random(in: 1...100)
         let randomNumResult = String(randomNumText)
-        list.append("랜덤 숫자 \(randomNumResult)을 추가했어요")
+        let addRandomNum = Check(list: randomNumResult, check: true)
+        todolist.append(addRandomNum)
         
         tableView.reloadData()
         
@@ -84,7 +114,7 @@ class TableViewController: UITableViewController {
      
     // 테이블뷰 셀을 클릭하면 -> 삭제
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        list.remove(at: indexPath.row)
+        todolist.remove(at: indexPath.row)
         // 테이블뷰 싱크 맞추기
         tableView.reloadData()
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EA648E12C075C8500772112 /* TableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA648E02C075C8500772112 /* TableViewController+Extension.swift */; };
 		6EEE2A752C05DA3000B7BC29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE2A742C05DA3000B7BC29 /* AppDelegate.swift */; };
 		6EEE2A772C05DA3000B7BC29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE2A762C05DA3000B7BC29 /* SceneDelegate.swift */; };
 		6EEE2A792C05DA3000B7BC29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE2A782C05DA3000B7BC29 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6EA648E02C075C8500772112 /* TableViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewController+Extension.swift"; sourceTree = "<group>"; };
 		6EEE2A712C05DA3000B7BC29 /* tableView0528Test1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableView0528Test1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EEE2A742C05DA3000B7BC29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6EEE2A762C05DA3000B7BC29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				6EEE2A822C05DA3100B7BC29 /* Info.plist */,
 				6EEE2A882C05DA4C00B7BC29 /* TableViewController.swift */,
 				6EEE2A8A2C05DA5600B7BC29 /* TableViewCell.swift */,
+				6EA648E02C075C8500772112 /* TableViewController+Extension.swift */,
 			);
 			path = tableView0528Test1;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EEE2A8B2C05DA5600B7BC29 /* TableViewCell.swift in Sources */,
+				6EA648E12C075C8500772112 /* TableViewController+Extension.swift in Sources */,
 				6EEE2A792C05DA3000B7BC29 /* ViewController.swift in Sources */,
 				6EEE2A752C05DA3000B7BC29 /* AppDelegate.swift in Sources */,
 				6EEE2A772C05DA3000B7BC29 /* SceneDelegate.swift in Sources */,
